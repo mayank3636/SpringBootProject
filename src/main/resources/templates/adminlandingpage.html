@@ -1,0 +1,64 @@
+<html lang="en" >
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+	<title>Facebook style update status box with CSS3, HTML, Bootstrap and Jquery  - wsnippets.com</title>
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+	<script src="js/jquery.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<script src="js/jquery.min.js"></script>
+	
+</head> 
+
+  <body>
+
+    <div class="container">
+	<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<h3 class="text-center">HELLO ADMIN POST SOMETHING!!!!</h3>
+		
+		<form action="#" th:action="@{/adminlandingpage}" th:object="${post}" method="post" role="form" class="facebook-share-box" enctype="multipart/form-data" id="fileForm">
+		
+			<div class="share">
+				<div class="arrow"></div>
+				<div class="panel panel-default">
+                      <div class="panel-heading"><i class="fa fa-file"></i> Update Status</div>
+                      <div class="panel-body">
+                        <div class="">
+   <textarea name="message" cols="40" rows="10" id="status_message" class="form-control message" style="height: 62px; overflow: hidden;" placeholder="What's on your mind ?" th:field="*{statusText}"></textarea> 
+						<div id="errorDiv" th:if="${#fields.hasErrors('statusText')}" th:errors="*{statusText}" class="alert alert-danger">Status Cannot Be Blank</div>
+						</div>
+                      </div>
+						<div class="panel-footer">
+								<div class="row">
+									<div class="col-md-7">
+										<div class="form-group">
+											<div class="btn-group">
+											  <input type="file" id="vidupload" style="display:none" name="file" accept="video/*"/>
+											   <input type="file" id="imgupload" style="display:none" name="file" accept="image/*"/>
+											  <button type="button" class="btn btn-default" id="videoupload" name="video" ><i class="glyphicon glyphicon-film"></i> Video</button>
+											  <button type="button" class="btn btn-default" id="imageupload" name="image" ><i class="glyphicon glyphicon-camera"></i> Photo</button>
+											<script>$('#videoupload').click(function(){ $('#vidupload').trigger('click'); });</script>
+											<script>$('#imageupload').click(function(){ $('#imgupload').trigger('click'); });</script>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-5">
+										<div class="form-group">                                    
+											<input type="submit" name="submit" value="Post"  class="btn btn-primary pull-right"/>                               
+										</div>
+									</div>
+								</div>
+						</div>
+                    </div>
+			</div>
+			</form>
+			</div>
+	</div>
+	</div>
+  </body>
+</html>
