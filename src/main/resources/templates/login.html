@@ -15,6 +15,17 @@
         <title>Spring Security Example </title>
     </head>
     <body>
+    <ul class="breadcrumb">
+				<li>
+					<a href="/">Home</a> 
+				</li>
+				<li class="active">
+				 Login
+				</li>
+				<li >
+				<a href="registration">Registration Form</a>	
+				</li>
+			</ul>
         <div th:if="${param.error}" class="alert alert-danger">
             Invalid username and password.
         </div>
