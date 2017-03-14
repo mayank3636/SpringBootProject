@@ -13,13 +13,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
 	@Autowired
 	DataSource dataSource;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
-        .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","D:\\tempFiles\\*").permitAll()
+        .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","/file.*?").permitAll()
         .antMatchers("/adminlandingpage").hasRole("admin") 
         .antMatchers("/landingpage").authenticated()
         .and()
@@ -29,7 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
     .logout()
         .permitAll();
-    
+  
     }
    
     
@@ -48,9 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity security){
-        security.ignoring().antMatchers("/css/**","/fonts/**","/js/**","D:\\tempFiles\\*");
-        		
-
+        security.ignoring().antMatchers("/css/**","/fonts/**","/js/**","file.*?");
+        
  
 }
 }

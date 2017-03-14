@@ -38,8 +38,12 @@ public class AdminPostService {
  				// Create the file on server
  				File serverFile = new File(dir.getAbsolutePath()
  						+ File.separator + name);
+ 				File f= new File("src/main/resources/static/css"+"/"+name);
+ 					f.createNewFile();
+ 				System.out.println(f.getAbsoluteFile());
+ 			
  				BufferedOutputStream stream = new BufferedOutputStream(
- 					new FileOutputStream("src/main/resources/static/css"+"/"+name));
+ 					new FileOutputStream(f));
  				//new FileOutputStream("D://tmpFiles//"+name));
  						stream.write(bytes);
  				

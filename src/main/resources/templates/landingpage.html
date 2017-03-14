@@ -20,24 +20,25 @@
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
-    <div class="container-fluid">
+    <div class="container-fluid" align="center">
 	<div class="row">
 		<div class="col-md-9">
 			<div class="container-fluid" th:each="post : ${posts}">
-	<div class="row">
+	<div class="row" align="justify">
 		<div class="col-md-12">
 			<h3 th:text="${post.statusText}">
 			
 			</h3>
-			<div class="row">
+			<div class="row" align="justify">
 				<div class="col-md-6" th:if="${post.imageName!= null}">
-				<img th:src="@{'/css/'+${post.imageName}}" class="img-rounded" alt="Cinque Terre" width="304" height="236" ></img>
+			<img th:src="@{'/css/'+${post.imageName}}" class="img-rounded" alt="Cinque Terre" width="304" height="236" align="middle" ></img>
+				<!-- <img th:src="@{D:\Spring2,0\Sprin\SpingBootProject-master\SpingBootProject-master\src\main\resources\static\css\1.jpg}"/> -->
 				</div>
-				<div class="col-md-6" th:if="${post.videoName!= null}">
-				<video><source th:attr="src='../css/'+${post.videoName}" type="video/mp4"/></video>
+				<div class="col-md-6" th:if="${post.videoName!= null}" align="center">
+				<video ><source th:src="@{'/css/'+${post.videoName}}" type="video/mp4" /></video>
 				</div>
 			</div>
-			<div class="row" >
+			<div class="row" align="justify">
 				<div class="col-md-12">
 						<form th:attr="id='form'+${post.id}">
 						<input type="text" name="comment" th:attr="id='comment'+${post.id}"/>					
@@ -80,7 +81,7 @@ $.ajax({
     	console.log(result);
     	var x= $([['#form'+${post.id}]]).serializeArray();
     	$([['#div'+${post.id}]]).append('<tr><td>'+x[0].value+'</td><td>'+x[5].value+'</td></tr>');
-   		$('#comment1').val('');
+   		$([['#comment'+${post.id}]]).val('');
     }
  });
     });
