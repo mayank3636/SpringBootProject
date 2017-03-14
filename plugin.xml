@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension
+     id="app-id"
+     point="org.eclipse.core.runtime.applications">
+   <application
+        cardinality="singleton-global"
+        thread="main"
+        visible="true">
+     <run
+           class="application class">
+     </run>
+  </application>
+</extension>
