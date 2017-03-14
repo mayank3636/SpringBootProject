@@ -17,6 +17,7 @@ public class AdminPostService {
 	CMSDao dao;
 	public boolean savePost(Post post, MultipartFile[] files) {
 		String message="";
+		if(files!=null)
      	for (int i = 0; i < files.length; i++) {
  			MultipartFile file = files[i];
  			
@@ -38,8 +39,10 @@ public class AdminPostService {
  				File serverFile = new File(dir.getAbsolutePath()
  						+ File.separator + name);
  				BufferedOutputStream stream = new BufferedOutputStream(
- 						new FileOutputStream("src/main/resources/static/css"+"/"+name));
- 				stream.write(bytes);
+ 					new FileOutputStream("src/main/resources/static/css"+"/"+name));
+ 				//new FileOutputStream("D://tmpFiles//"+name));
+ 						stream.write(bytes);
+ 				
  				stream.close();
  
  
@@ -51,18 +54,23 @@ public class AdminPostService {
  		}
      	try{
      		Post p =new Post();
+     		if(files!=null){
      		if(files[1].getOriginalFilename().isEmpty()){
      			p.setImageName(null);
      		}else{
      			p.setImageName(files[1].getOriginalFilename());
      		}
      			
-     		if(files[0].getOriginalFilename().isEmpty()){
+     		if(files[0].getOriginalFilename().isEmpty()||files==null){
      			p.setVideoName(null);
      		}else{
      			p.setVideoName(files[0].getOriginalFilename());
      		}
-     			
+     		}else if(files==null){
+     			p.setImageName(null);
+     			p.setVideoName(null);
+     		}
+     		
      		p.setStatusText(post.getStatusText());
      		dao.save(p);
      		return true;

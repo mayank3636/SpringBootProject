@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
-        .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","D:\\tmpFiles\\*").permitAll()
+        .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","D:\\tempFiles\\*").permitAll()
         .antMatchers("/adminlandingpage").hasRole("admin") 
         .antMatchers("/landingpage").authenticated()
         .and()
@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity security){
-        security.ignoring().antMatchers("/css/**","/fonts/**","/js/**");
+        security.ignoring().antMatchers("/css/**","/fonts/**","/js/**","D:\\tempFiles\\*");
         		
 
  
