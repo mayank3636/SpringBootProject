@@ -14,9 +14,9 @@ spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=create
 management.security.enabled=false
 
-Kindly run the query 
-# create database mydb;
+# To run the project kindly import to IDE and change the following properties in application.properties
+spring.datasource.username=MYSQL PASSWORD
+spring.datasource.password=MYSQL USERNAME
 
-and change datasource.username to your username mysql
-
-datasource.password to your password mysql
+# after changing properties file go to MYSQL and Run the query
+create database mydb;
