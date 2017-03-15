@@ -12,7 +12,7 @@ spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 spring.jpa.show-sql=false
 spring.jpa.hibernate.ddl-auto=create
-management.security.enabled=false
+
 
 # To run the project kindly import to IDE and change the following properties in application.properties
 spring.datasource.username=MYSQL PASSWORD
