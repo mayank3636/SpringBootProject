@@ -1,8 +1,8 @@
-# SpringBootProject
+# SpringBootProject Content Management System 
 Spring Boot Project is made on 
 https://skillspeed.wistia.com/medias/djiqhyin0a
 
-Project is Content Management System 
+
 
 To run the project kindly make sure you change application.properties files 
 spring.datasource.url=jdbc:mysql://localhost:3306/mydb
