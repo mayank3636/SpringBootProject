@@ -20,3 +20,5 @@ spring.datasource.password=MYSQL USERNAME
 
 # after changing properties file go to MYSQL and Run the query
 create database mydb;
+
+
