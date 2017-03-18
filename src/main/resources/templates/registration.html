@@ -1,0 +1,82 @@
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <title>Registration</title>
+
+    <meta name="description" content="Source code generated using layoutit.com"></meta>
+    <meta name="author" content="LayoutIt!"></meta>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+    <link href="css/style.css" rel="stylesheet"></link>
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		<ul class="breadcrumb">
+				<li>
+					<a href="/">Home</a> 
+				</li>
+				<li>
+				<a href="login">Login</a>
+				</li>
+				<li class="active">
+					Registration Form
+				</li>
+			</ul>
+			<h3>
+				Hello New User, Register Now ,Its Free!!!!!!!!!
+			</h3>
+
+	<form  th:action="@{/registration}"  th:object="${personForm}" method="post">
+	<input type="hidden" th:field="*{role}" th:value="user"/>
+	<ul th:if="${#fields.hasErrors('*')}" >
+  <li th:each="err : ${#fields.errors('*')}" th:text="${err}" class="alert-alert danger">Input is incorrect</li>
+</ul>
+	<div id="err"></div>
+	
+				<div class="form-group">
+					<label>
+						Email address
+					</label>
+					<input type="text" th:field="*{email}" class="form-control" th:errorclass="fieldError" />
+					<div  th:if="${#fields.hasErrors('email')}" th:errors="*{email}" >Enter Valid Email</div>
+				</div>
+				<div class="form-group">
+					 
+					<label>
+						UserName
+					</label>
+					<input type="text" class="form-control" th:field="*{username}"></input>
+					<div  th:if="${#fields.hasErrors('username')}" th:errors="*{username}" >Enter Valid username</div>
+				
+					
+				</div>
+				<div class="form-group">
+					 
+					<label>Password</label>
+					<input type="password" class="form-control"  th:field="*{password}"></input>
+					<div  th:if="${#fields.hasErrors('password')}" th:errors="*{password}" >Enter Valid password</div>
+			
+				</div>
+				
+				<button type="submit" id="button1">Submit</button>
+				
+				
+			</form>
+			
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
