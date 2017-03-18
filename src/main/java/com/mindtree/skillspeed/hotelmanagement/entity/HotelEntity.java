@@ -1,8 +1,11 @@
 package com.mindtree.skillspeed.hotelmanagement.entity;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
@@ -15,9 +18,9 @@ public class HotelEntity {
 	Double Hotel_price;
 	Integer room_avail;
 	
-	
-	@OneToMany
-	
+	//
+	@ManyToOne
+	@JoinColumn(name="CityEntity_id")
 	public CityEntity getCityentity() {
 		return cityentity;
 	}

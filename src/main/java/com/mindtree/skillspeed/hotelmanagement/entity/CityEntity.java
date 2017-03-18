@@ -5,7 +5,7 @@ import javax.persistence.*;
 public class CityEntity {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	Integer id;
+Integer id;
 String CityName;
 HotelEntity hotelentity;
 public Integer getId() {
@@ -20,8 +20,7 @@ public String getCityName() {
 public void setCityName(String cityName) {
 	CityName = cityName;
 }
-@ManyToOne
-@JoinColumn(name="HotelEntity_Hotel_id")
+@OneToMany(mappedBy = "CityEntity", cascade = CascadeType.ALL)
 public HotelEntity getHotelentity() {
 	return hotelentity;
 }
