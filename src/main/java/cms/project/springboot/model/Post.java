@@ -1,6 +1,9 @@
 package cms.project.springboot.model;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -35,7 +38,11 @@ public class Post {
 	private List<Comments> comments;
 	
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+<<<<<<< HEAD
 //	@Column(name="comments")
+=======
+	@Column(name="comments")
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
 	public List<Comments> getComments() {
 		return comments;
 	}

@@ -20,7 +20,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
         .authorizeRequests()
+<<<<<<< HEAD
         .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","file:///D://tempFiles//PerfMonOutput.jpg").permitAll()
+=======
+        .antMatchers("/registration","/registrationsucess","/landingpagepostcomment","/file.*?").permitAll()
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
         .antMatchers("/adminlandingpage").hasRole("admin") 
         .antMatchers("/landingpage").authenticated()
         .and()
@@ -49,7 +53,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     public void configure(WebSecurity security){
+<<<<<<< HEAD
         security.ignoring().antMatchers("/css/**","/fonts/**","/js/**","file:///D://tempFiles//PerfMonOutput.jpg");
+=======
+        security.ignoring().antMatchers("/css/**","/fonts/**","/js/**","file.*?");
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
         
  
 }

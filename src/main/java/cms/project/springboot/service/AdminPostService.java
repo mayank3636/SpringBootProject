@@ -4,7 +4,10 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+<<<<<<< HEAD
 import org.eclipse.core.resources.ResourcesPlugin;
+=======
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -53,7 +56,10 @@ public class AdminPostService {
  
  				message = message + "You successfully uploaded file=" + name
  						+ "";
+<<<<<<< HEAD
  				//ResourcesPlugin.getWorkspace().getRoot().getProjects();
+=======
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
  			} catch (Exception e) {
  				e.printStackTrace();
  			}

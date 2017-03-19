@@ -83,7 +83,11 @@
 						<input type="hidden" th:value="${#httpServletRequest.remoteUser}" name="userName"/>
 						<button th:attr="id='button'+${post.id}" type="button">comment</button>
 						</form>
+<<<<<<< HEAD
 						<table th:attr="id='div'+${post.id}" border="3">
+=======
+						<table th:attr="id='div'+${post.id}">
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
 						<tr><td>Comment</td><td>UserName</td></tr>
 						<tr th:each="comment: ${post.comments}">
 						<td th:text="${comment.comments}"></td>

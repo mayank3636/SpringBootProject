@@ -2,8 +2,11 @@ package cms.project.springboot.controller;
 
 import javax.validation.Valid;
 
+<<<<<<< HEAD
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+=======
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,7 +39,11 @@ CMSDao dao;
 CommentDao commentdao;
 	@RequestMapping(value="/landingpage")
 	public String LandingPage(Model map){
+<<<<<<< HEAD
 		//ResourcesPlugin.getWorkspace().getRoot().getProjects();
+=======
+		
+>>>>>>> 457256ae3529d4a9f03dcdcf1ee5cd4ca22e503a
         map.addAttribute("posts", dao.findAll());
 		
 		return "landingpage";	
