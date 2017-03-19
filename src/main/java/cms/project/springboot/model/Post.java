@@ -1,5 +1,6 @@
 package cms.project.springboot.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -34,7 +35,7 @@ public class Post {
 	private List<Comments> comments;
 	
 	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
-	@Column(name="comments")
+//	@Column(name="comments")
 	public List<Comments> getComments() {
 		return comments;
 	}
